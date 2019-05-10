@@ -1,0 +1,44 @@
+<?php
+
+
+namespace App\Services\Withdrawal;
+
+
+use App\Repositories\Contracts\WithdrawalRepositoryInterface;
+use App\Services\Withdrawal\Validator\WithdrawalValidator;
+
+class CreateWithdrawalService
+{
+    private $withdrawal_repository;
+    
+    public function __construct()
+    {
+        $this->withdrawal_repository
+            = resolve(WithdrawalRepositoryInterface::class);
+    }
+    
+    public function create(WithdrawalRequest $withdrawal_request)
+    {
+        $withdrawalRequestValidator = new WithdrawalValidator();
+        $withdrawalRequestValidator->validate($withdrawal_request);
+        
+       $newWithdrawal =  $this->withdrawal_repository->store(
+            [
+                'withdrawal_gateway_id' => $withdrawal_request->getGateway(),
+                'withdrawal_user_account_id' => $withdrawal_request->getAccount(),
+                'withdrawal_amount'     => $withdrawal_request->getAmount(),
+                'withdrawal_commission' => $withdrawal_request->getCommission(),
+                'withdrawal_status'     => $withdrawal_request->getStatus(),
+            ]
+        );
+        
+        if (!is_null($newWithdrawal))
+        {
+            /*TODO NOtification service*/
+            return true;
+        }
+        
+        
+        
+    }
+}

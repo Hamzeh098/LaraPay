@@ -1,18 +1,14 @@
 <tr>
-    <th scope="row">{{ $gateway->gateway_id}}</th>
-    <td>{{ $gateway->owner->name }}</td>
-    <td>{{ $gateway->gateway_title }}</td>
-    <td>{{ $gateway->gateway_plan }}</td>
-    <td>{{ $gateway->gateway_balance }}</td>
-    <td> {!! $gateway->present()->GatewayStatus!!}</td>
+    <td scope="row">{{ $withdrawal->withdrawal_id }}</td>
+    <td>{{ $withdrawal->gateway->gateway_title }}</td>
+    <td>{{ $withdrawal->account->user_account_title .'/'. $withdrawal->account->owner->name }}</td>
+    <td>{{ $withdrawal->present()->amount }}</td>
+    <td>{{ $withdrawal->present()->commission }}</td>
+    <td>{{ $withdrawal->withdrawal_ref_number }}</td>
+    <td>{{ $withdrawal->present()->create }}</td>
+    <td>{{ $withdrawal->present()->update }}</td>
+   {{-- <td>{!!  $withdrawal->present()->adminStatus !!}</td>
     <td>
-       <a href="{{ route('admin.gateway.delete',[$gateway->gateway_id]) }}"
-           class="trash-item trash-user-account">
-            <i class="fas fa-trash-alt">delete</i>
-        </a>
-        <a href="{{ route('admin.gateway.edit',[$gateway->gateway_id]) }}"
-           class="trash-item trash-user-account">
-            <i class="fas fa-edit">edit</i>
-        </a>
-    </td>
+        {!!  $withdrawal->present()->adminOperations !!}
+    </td>--}}
 </tr>

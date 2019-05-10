@@ -17,7 +17,7 @@ class EloquentWithdrawalRepository extends EloquentBaseRepository implements
     public function getUserAccountWithdrawalCount(int $userAccountID)
     {
         return $this->model::where('withdrawal_user_account_id',$userAccountID)
-            ->whereBetween('created_at',Carbon::now(),Carbon::now()->subMonth(1))
+            ->whereBetween('created_at',[Carbon::now(),Carbon::now()->subMonth(1)])
             ->count();
     }
     

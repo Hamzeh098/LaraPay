@@ -1,7 +1,7 @@
 @extends('layouts.admin')
 @section('title','ثبت درخواست جدید')
 @section('styles')
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6/css/select2.min.css" rel="stylesheet"/>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/css/select2.min.css" rel="stylesheet"/>
 @endsection
 @section('content')
     <div class="col-xs-12 col-md-9 col-lg-6">
@@ -27,16 +27,15 @@
     </div>
 @endsection
 @section('scripts')
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6/js/select2.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/js/select2.min.js"></script>
     <script>
         jQuery(document).ready(function ($) {
             $('#gateway').select2({
-                closeOnSelect: true,
-
                 theme: 'classic',
+                placeholder: 'جستجوی درگاه ها ...',
                 minimumInputLength: 3,
                 ajax: {
-                    url: '{{route('admin.gateway.search')}}',
+                    url: '/admin/gateways/search',
                     dataType: 'json',
                     data: function (params) {
                         return {
@@ -51,22 +50,23 @@
                 },
             });
             $('#gateway').on('change', function (e) {
+
                 let currentGateway = $(this).val();
+                $('#account').html('');
                 $.ajax({
-                    type: 'GET',
-                    url: '{{route('admin.user.account.search')}}',
-                    dataType: 'json',
-                    data: {
-                        gateway: currentGateway
+                    type:'GET',
+                    url:'{{ route('admin.user.account.search') }}',
+                    dataType:'json',
+                    data:{
+                        gateway:currentGateway
                     },
-                    success: function (response) {
+                    success:function(response){
                         let items = response.items;
-                        items.forEach(function (items) {
-                            $('#account').append('<option value="' + items.id + '">' + items.text + '</option>');
-                        });
+                       items.forEach(function(item){
+                            $('#account').append('<option value="'+item.id+'">'+item.text+'</option>');
+                       });
                     },
-                    error: function (error) {
-                    }
+                    error:function(error){}
                 });
             });
         });

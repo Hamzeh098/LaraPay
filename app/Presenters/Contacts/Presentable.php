@@ -3,8 +3,6 @@
 
 namespace App\Presenters\Contacts;
 
-use phpDocumentor\Reflection\Types\This;
-use mysql_xdevapi\Exception;
 
 trait Presentable
 {
@@ -13,7 +11,7 @@ trait Presentable
     public function present()
     {
         if ( ! $this->presenter || ! class_exists($this->presenter)) {
-            throw new Exception('presenter not found');
+            throw new \Exception('presenter not found');
         }
         
         if ( ! $this->presenterInstance) {
