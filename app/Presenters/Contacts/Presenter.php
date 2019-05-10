@@ -4,7 +4,6 @@
 namespace App\Presenters\Contacts;
 
 
-use mysql_xdevapi\Exception;
 
 abstract class Presenter
 {

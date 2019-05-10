@@ -2,10 +2,15 @@
 
 namespace App\Models;
 
+use App\Presenters\Contacts\Presentable;
+use App\Presenters\Withdrawal\WithdrawalPresenter;
 use Illuminate\Database\Eloquent\Model;
 
 class WithDrawal extends Model
 {
+    use Presentable;
+    protected $presenter = WithdrawalPresenter::class;
+    
     const PENDING = 1;
     const DONE = 2;
     const REJECTED = 3;
@@ -21,7 +26,7 @@ class WithDrawal extends Model
             self::REJECTED => 'رد شده',
         ];
     }
-    
+    /*Relations*/
     public function gateway()
     {
         return $this->belongsTo(Gateway::class,'withdrawal_gateway_id');
@@ -31,4 +36,5 @@ class WithDrawal extends Model
     {
         return $this->belongsTo(UserAccount::class,'withdrawal_user_account_id');
     }
+    /*End Relations*/
 }
