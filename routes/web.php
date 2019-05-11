@@ -47,7 +47,6 @@ Route::group(['prefix'=>'admin','namespace'=>'Admin' , 'as'=>'admin.'],function 
            Route::get('/add','GatewayPlanController@create')->name('create');
            Route::post('/add','GatewayPlanController@store')->name('store');
            Route::get('/','GatewayPlanController@index')->name('index');
-           Route::get('/','GatewayPlanController@index')->name('index');
            
         });
     });
@@ -57,9 +56,9 @@ Route::group(['prefix'=>'admin','namespace'=>'Admin' , 'as'=>'admin.'],function 
        Route::get('/','WithdrawalController@index')->name('index');
         Route::get('/add', 'WithdrawalController@create')->name('create');
         Route::post('/add', 'WithdrawalController@store')->name('store');
-        Route::get('/edit/{id}','WithdrawalController@edit')->name('edit');
-        Route::post('/edit/{id}','WithdrawalController@update')->name('update');
-        Route::get('/delete/{id}','WithdrawalController@delete')->name('delete');
+        Route::get('/approve/{id}','WithdrawalController@approve')->name('approve');
+        Route::get('/reject/{id}','WithdrawalController@reject')->name('reject');
+     
        
     });
         

@@ -78,18 +78,16 @@ class WithdrawalController extends Controller
         
     }
     
-    public function delete(Request $request, $id)
+    public function approve()
     {
-    
+        
     }
     
-    public function edit(Request $request, $id)
+    public function reject()
     {
-    
+        
     }
     
-    public function update(Request $request, $id)
-    {
-    
-    }
+ 
+   
 }
