@@ -9,6 +9,8 @@
     <td>{{ $withdrawal->present()->update }}</td>
     <td>{!!  $withdrawal->present()->adminStatus !!}</td>
     <td>
-        {!!  $withdrawal->present()->adminOperations !!}
-    </td>--}}
+        <a href="{{route('admin.withdrawal.approve',[$withdrawal->withdrawal_id])}}" class="btn btn-success btn-xs"> تایید</a>
+        <a href="#" class="btn btn-danger btn-xs"> رد</a>
+    {{--    {!!  $withdrawal->present()->adminOperations !!}--}}
+    </td>
 </tr>

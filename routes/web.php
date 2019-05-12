@@ -5,7 +5,7 @@ Route::group(['prefix'=>'admin','namespace'=>'Admin' , 'as'=>'admin.'],function 
     Route::get('/','dashboardController@index')->name('dashboard.index');
     Route::get('/statistics','dashboardController@statistics')->name('dashboard.statistics');
     
-    //user routes
+    /*User*/
     Route::group(['prefix'=>'user','namespace'=>'User' , 'as'=>'user.'],function (){
         Route::get('/','UsersController@index')->name('index');
         Route::get('/add','UsersController@create')->name('create');
@@ -14,7 +14,8 @@ Route::group(['prefix'=>'admin','namespace'=>'Admin' , 'as'=>'admin.'],function 
         Route::post('/update','UsersCotroller@update')->name('update');
         Route::get('/search', 'UsersController@search')->name('search');
     });
-        // user Account route
+    
+    /*UserAccount*/
     Route::group(['prefix'=>'accounts','namespace'=>'User' , 'as'=>'user.'],function () {
         Route::get('/', 'UserAccountController@index')
              ->name('accounts.index');
@@ -31,7 +32,8 @@ Route::group(['prefix'=>'admin','namespace'=>'Admin' , 'as'=>'admin.'],function 
         Route::get('/search', 'UserAccountController@search')->name('account.search');
         
     });
-    
+   
+    /*Gateways*/
     Route::group(['prefix'=>'gateways','namespace'=>'Gateway','as'=>'gateway.'],function (){
         Route::get('/', 'GatewayController@index')->name('index');
         Route::get('/add', 'GatewayController@create')->name('create');
@@ -51,12 +53,14 @@ Route::group(['prefix'=>'admin','namespace'=>'Admin' , 'as'=>'admin.'],function 
         });
     });
     
+    /*Withdrawal*/
     Route::group(['prefix'=>'withdrawal','namespace'=>'Withdrawal','as'=>'withdrawal.'],function ()
     {
        Route::get('/','WithdrawalController@index')->name('index');
         Route::get('/add', 'WithdrawalController@create')->name('create');
         Route::post('/add', 'WithdrawalController@store')->name('store');
         Route::get('/approve/{id}','WithdrawalController@approve')->name('approve');
+        Route::post('/approve/{id}','WithdrawalController@performApprove')->name('approve.save');
         Route::get('/reject/{id}','WithdrawalController@reject')->name('reject');
      
        
