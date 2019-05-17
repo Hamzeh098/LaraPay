@@ -103,12 +103,12 @@ class EloquentBaseRepository implements RepositoryInterface
     
     public function beginTransaction()
     {
-        DB::beginTransaction();
+         DB::beginTransaction();
     }
     
     public function rollBack()
     {
-        DB::rollBack();
+          DB::rollBack();
     }
     
     public function commit()

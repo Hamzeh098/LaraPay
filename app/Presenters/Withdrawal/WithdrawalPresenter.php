@@ -55,8 +55,14 @@ class WithdrawalPresenter extends Presenter
         return $result;
     }
     
-    public function adminOperation()
+    public function adminOperations()
     {
+        $status = $this->entity->withdrawal_status;
+        $withdrawal = $this->entity;
+        if ($status == WithDrawal::PENDING)
+        {
+            return view('admin.withdrawal.operation',compact('withdrawal'))->render();
+        }
         
     }
     

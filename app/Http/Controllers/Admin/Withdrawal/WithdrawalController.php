@@ -28,7 +28,6 @@ class WithdrawalController extends Controller
     {
         $withdrawals = $this->withdrawal_repository->all(null,
             ['gateway', 'account.owner']);
-        
         return view('admin.withdrawal.index', compact('withdrawals'));
         
     }
@@ -88,12 +87,12 @@ class WithdrawalController extends Controller
         return view('admin.withdrawal.approve', compact('withdrawalItem'));
     }
     
-    public function performApprove(Request $request, $id)
+    public function performApprove(Request $request, $id )
     {
-        $resultApprove = $this->WithdrawalService->approve($id);
+        $resultApprove = $this->WithdrawalService->approve($id,$request->ref_number);
         if ($resultApprove) {
-            return redirect()->back()
-                             ->with('success', 'درخواست با موفقیت انجام شد!');
+            return redirect()->route('admin.withdrawal.index')
+                             ->with('status', 'درخواست با موفقیت انجام شد!');
         }
         
         return redirect()->back()->withErrors([
@@ -103,7 +102,15 @@ class WithdrawalController extends Controller
     
     public function reject(Request $request, $id)
     {
-        $withdrawalItem = $this->getById($id);
+        $resultReject = $this->WithdrawalService->reject($id);
+        if ($resultReject)
+        {
+            return redirect()->back()->with('status','درخواست با موفقیت اجرا شد');
+        }
+        return redirect()->back()->withErrors([
+           'error'=>'درخواست با موفقیت حذف شد'
+        ]);
+        
         
     }
     

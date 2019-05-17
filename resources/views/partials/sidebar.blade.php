@@ -49,6 +49,14 @@
                         <li><a href="{{route('admin.withdrawal.create')}}">ثبت درخواست واریز</a></li>
                     </ul>
                 </li>
+
+                <li><a class="has-arrow " href="#" aria-expanded="false"><i class="fa fa-book"></i><span
+                                               class="hide-menu">گزارش های درگاه
+                                                                           </span></a>
+                                   <ul aria-expanded="false" class="collapse">
+                                       <li><a href="{{route('admin.gateway.report.index')}}">لیست گزارش ها</a></li>
+                                   </ul>
+                               </li>
                 <li><a class="has-arrow  " href="#" aria-expanded="false"><i class="fa fa-book"></i><span
                                 class="hide-menu">نوشته ها
                         </span></a>

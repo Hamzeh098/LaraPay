@@ -15,7 +15,6 @@ class EloquentUserEntity implements UserEntity
     
     public function __construct(User $user)
     {
-        
         $this->user = $user;
     }
     

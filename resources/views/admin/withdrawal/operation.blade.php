@@ -1,0 +1,2 @@
+<a href="{{route('admin.withdrawal.approve',[$withdrawal->withdrawal_id])}}" class="btn btn-success btn-xs"> تایید</a>
+<a href="{{route('admin.withdrawal.reject',[$withdrawal->withdrawal_id])}}" class="btn btn-danger btn-xs"> رد</a>

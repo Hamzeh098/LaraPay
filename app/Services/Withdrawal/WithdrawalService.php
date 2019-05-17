@@ -4,7 +4,9 @@
 namespace App\Services\Withdrawal;
 
 
+use App\Models\WithDrawal;
 use App\Repositories\Contracts\WithdrawalRepositoryInterface;
+use App\Services\Gateway\AggregtionService;
 use App\Services\Withdrawal\Validator\WithdrawalValidator;
 
 class WithdrawalService
@@ -40,10 +42,11 @@ class WithdrawalService
         
     }
     
-    public function approve(int $withdrawal_id)
+    public function approve(int $withdrawal_id, string $ref_code)
     {
         $this->withdrawal_repository->beginTransaction();
-        $result = false;
+        $result             = false;
+        $aggregationService = new AggregtionService();
         try {
             $withdrawalItem
                      = $this->withdrawal_repository->find($withdrawal_id);
@@ -51,7 +54,18 @@ class WithdrawalService
             // $user = $withdrawalItem->account->owner;
             $gateway->decrement('gateway_balance',
                 $withdrawalItem->withdrawal_amount);
-            $withdrawalItem->done();
+            $updateResult = $withdrawalItem->update(
+                [
+                    'withdrawal_ref_number' => $ref_code,
+                    'withdrawal_status'     => WithDrawal::DONE,
+                ]
+            );
+            
+            if ($updateResult) {
+                $aggregationService->withdrawal($withdrawalItem->withdrawal_gateway_id,
+                    $withdrawalItem->withdrawal_amount);
+            }
+            
             //update Report
             $this->withdrawal_repository->commit();
             $result = true;
@@ -60,5 +74,14 @@ class WithdrawalService
         }
         
         return $result;
+    }
+    
+    public function reject(int $withdrawal_id)
+    {
+        $withdrawalItem = $this->withdrawal_repository->find($withdrawal_id);
+        
+        return $withdrawalItem->update([
+            'withdrawal_status' => WithDrawal::REJECTED,
+        ]);
     }
 }

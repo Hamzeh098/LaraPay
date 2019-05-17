@@ -42,6 +42,7 @@ Route::group(['prefix'=>'admin','namespace'=>'Admin' , 'as'=>'admin.'],function 
         Route::post('/edit/{id}','GatewayController@update')->name('update');
         Route::get('/delete/{id}','GatewayController@delete')->name('delete');
         Route::get('/search', 'GatewayController@search')->name('search');
+        Route::get('/report','GatewayReportController@index')->name('report.index');
         
         
         Route::group(['prefix'=>'plan','as'=>'plan.'],function (){
