@@ -2,20 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a86801fa-62cf-4ab2-a987-8efc05cb7bf9" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/app/Presenters/Withdrawal/WithdrawalPresenter.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Services/Withdrawal/CreateWithdrawalService.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/ValueObjects/Email.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/ValueObjects/Mobile.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Admin/Withdrawal/WithdrawalController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/Withdrawal/WithdrawalController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/WithDrawal.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/WithDrawal.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Repositories/Eloquent/Withdrawal/EloquentWithdrawalRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Repositories/Eloquent/Withdrawal/EloquentWithdrawalRepository.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/withdrawal/columns.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/withdrawal/columns.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/withdrawal/create.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/withdrawal/create.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/withdrawal/edit.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/withdrawal/edit.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/withdrawal/form.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/withdrawal/form.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/withdrawal/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/withdrawal/index.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/withdrawal/item.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/withdrawal/item.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Entities/EloquentUserEntity.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Entities/UserEntity.php" beforeDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -26,77 +16,44 @@
   <component name="ComposerSettings" doNotAsk="true" synchronizationState="SYNCHRONIZE">
     <pharConfigPath>$PROJECT_DIR$/composer.json</pharConfigPath>
   </component>
+  <component name="FUSProjectUsageTrigger">
+    <session id="-728838024">
+      <usages-collector id="statistics.lifecycle.project">
+        <counts>
+          <entry key="project.closed" value="1" />
+          <entry key="project.open.time.3" value="1" />
+          <entry key="project.open.time.6" value="1" />
+          <entry key="project.opened" value="2" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.extensions.open">
+        <counts>
+          <entry key="env" value="1" />
+          <entry key="example" value="1" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.types.open">
+        <counts>
+          <entry key=".env file" value="2" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.extensions.edit">
+        <counts>
+          <entry key="env" value="11" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.types.edit">
+        <counts>
+          <entry key=".env file" value="11" />
+        </counts>
+      </usages-collector>
+    </session>
+  </component>
   <component name="FavoritesManager">
     <favorites_list name="larapay.exp" />
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Admin/Withdrawal/WithdrawalController.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="504">
-              <caret line="27" column="4" selection-start-line="27" selection-start-column="4" selection-end-line="27" selection-end-column="4" />
-              <folding>
-                <element signature="e#57#93#0#PHP" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/app/Models/WithDrawal.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="252">
-              <caret line="11" column="55" selection-start-line="11" selection-start-column="55" selection-end-line="11" selection-end-column="55" />
-              <folding>
-                <element signature="e#30#70#0#PHP" expanded="true" />
-                <element signature="e#274#479#0#PHP" />
-                <element signature="e#332#472#0#PHP" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/Presenters/Withdrawal/WithdrawalPresenter.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="679">
-              <caret line="32" column="4" selection-start-line="32" selection-start-column="4" selection-end-line="32" selection-end-column="4" />
-              <folding>
-                <element signature="e#47#77#0#PHP" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/Presenters/Gateway/GatewayPresenter.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="224">
-              <caret line="9" column="6" selection-start-line="9" selection-start-column="6" selection-end-line="9" selection-end-column="6" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/Presenters/User/UserAccountPresenter.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-273">
-              <caret line="10" column="6" selection-start-line="10" selection-start-column="6" selection-end-line="10" selection-end-column="6" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/resources/views/admin/withdrawal/item.blade.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="364">
-              <caret line="13" column="5" lean-forward="true" selection-start-line="13" selection-start-column="5" selection-end-line="13" selection-end-column="5" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300" />
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
@@ -116,12 +73,12 @@
     </replaceStrings>
   </component>
   <component name="Git.Settings">
+    <option name="ROOT_SYNC" value="DONT_SYNC" />
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/app/Models/User.php" />
         <option value="$PROJECT_DIR$/app/Services/Gateway/createGatewayService.php" />
         <option value="$PROJECT_DIR$/app/Repositories/Eloquent/Gateway/EloquentPlanRepository.php" />
         <option value="$PROJECT_DIR$/app/Services/Gateway/createGatewayRequest.php" />
@@ -172,8 +129,20 @@
         <option value="$PROJECT_DIR$/resources/views/admin/withdrawal/item.blade.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/Admin/Withdrawal/WithdrawalController.php" />
         <option value="$PROJECT_DIR$/app/Models/WithDrawal.php" />
+        <option value="$PROJECT_DIR$/.env" />
       </list>
     </option>
+  </component>
+  <component name="JsBuildToolGruntFileManager" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsBuildToolPackageJson" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsGulpfileManager">
+    <detection-done>true</detection-done>
+    <sorting>DEFINITION_ORDER</sorting>
+  </component>
+  <component name="NodePackageJsonFileManager">
+    <packageJsonPaths>
+      <path value="$PROJECT_DIR$/package.json" />
+    </packageJsonPaths>
   </component>
   <component name="PhpWorkspaceProjectConfiguration">
     <include_path>
@@ -275,44 +244,36 @@
         <subPane>
           <expand>
             <path>
-              <item name="larapay.exp" type="b2602c69:ProjectViewProjectNode" />
-              <item name="larapay.exp" type="462c0819:PsiDirectoryNode" />
+              <item name="LaraPay" type="b2602c69:ProjectViewProjectNode" />
+              <item name="LaraPay" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="larapay.exp" type="b2602c69:ProjectViewProjectNode" />
-              <item name="larapay.exp" type="462c0819:PsiDirectoryNode" />
+              <item name="LaraPay" type="b2602c69:ProjectViewProjectNode" />
+              <item name="LaraPay" type="462c0819:PsiDirectoryNode" />
               <item name="app" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="larapay.exp" type="b2602c69:ProjectViewProjectNode" />
-              <item name="larapay.exp" type="462c0819:PsiDirectoryNode" />
+              <item name="LaraPay" type="b2602c69:ProjectViewProjectNode" />
+              <item name="LaraPay" type="462c0819:PsiDirectoryNode" />
               <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="Presenters" type="462c0819:PsiDirectoryNode" />
+              <item name="Http" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="larapay.exp" type="b2602c69:ProjectViewProjectNode" />
-              <item name="larapay.exp" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="Presenters" type="462c0819:PsiDirectoryNode" />
-              <item name="Gateway" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="larapay.exp" type="b2602c69:ProjectViewProjectNode" />
-              <item name="larapay.exp" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="Presenters" type="462c0819:PsiDirectoryNode" />
-              <item name="User" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="larapay.exp" type="b2602c69:ProjectViewProjectNode" />
-              <item name="larapay.exp" type="462c0819:PsiDirectoryNode" />
+              <item name="LaraPay" type="b2602c69:ProjectViewProjectNode" />
+              <item name="LaraPay" type="462c0819:PsiDirectoryNode" />
               <item name="app" type="462c0819:PsiDirectoryNode" />
               <item name="Services" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="larapay.exp" type="b2602c69:ProjectViewProjectNode" />
-              <item name="larapay.exp" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
+              <item name="LaraPay" type="b2602c69:ProjectViewProjectNode" />
+              <item name="LaraPay" type="462c0819:PsiDirectoryNode" />
+              <item name="database" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="LaraPay" type="b2602c69:ProjectViewProjectNode" />
+              <item name="LaraPay" type="462c0819:PsiDirectoryNode" />
+              <item name="database" type="462c0819:PsiDirectoryNode" />
+              <item name="migrations" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -332,19 +293,19 @@
     <property name="settings.editor.selected.configurable" value="MTConfigurable" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/resources/views/admin/withdrawal" />
-      <recent name="$PROJECT_DIR$/app/Services/Withdrawal/Validator/Handlers" />
-      <recent name="$PROJECT_DIR$/resources/views/admin/gateway/plan" />
-      <recent name="$PROJECT_DIR$/resources/views/admin/gateway" />
-      <recent name="$PROJECT_DIR$/resources/views/admin/user/account" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/app/Repositories/Eloquent/Plan" />
       <recent name="$PROJECT_DIR$/app/Repositories/Eloquent/Gateway" />
       <recent name="$PROJECT_DIR$/app/Services/Notification/Providers/Socket" />
       <recent name="$PROJECT_DIR$/app/Services/Notification/Providers/Email" />
       <recent name="$PROJECT_DIR$/app/Services/Notification/Providers/Sms" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/resources/views/admin/withdrawal" />
+      <recent name="$PROJECT_DIR$/app/Services/Withdrawal/Validator/Handlers" />
+      <recent name="$PROJECT_DIR$/resources/views/admin/gateway/plan" />
+      <recent name="$PROJECT_DIR$/resources/views/admin/gateway" />
+      <recent name="$PROJECT_DIR$/resources/views/admin/user/account" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -406,11 +367,13 @@
       <workItem from="1557501682029" duration="1280000" />
       <workItem from="1557506567710" duration="1698000" />
       <workItem from="1557511756627" duration="2604000" />
+      <workItem from="1557524006775" duration="535000" />
+      <workItem from="1558643616489" duration="290000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="136581000" />
+    <option name="totallyTimeSpent" value="137406000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -422,10 +385,9 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="25" width="1280" height="999" extended-state="6" />
-    <editor active="true" />
+    <frame x="-8" y="-8" width="1296" height="744" extended-state="6" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49884528" visible="true" weight="0.23344104" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49884528" visible="true" weight="0.24032257" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="npm" order="2" sideWeight="0.5011547" side_tool="true" weight="0.2358643" />
       <window_info id="Favorites" order="3" sideWeight="0.5011547" side_tool="true" weight="0.2358643" />
@@ -438,9 +400,9 @@
       <window_info anchor="bottom" id="TODO" order="6" weight="0.32915717" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="8" weight="0.32915717" />
-      <window_info anchor="bottom" id="Database Changes" order="9" />
+      <window_info anchor="bottom" id="Database Changes" order="9" show_stripe_button="false" />
       <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.50080776" side_tool="true" weight="0.32794458" />
-      <window_info anchor="bottom" id="Terminal" order="11" sideWeight="0.49919224" weight="0.32687926" />
+      <window_info anchor="bottom" id="Terminal" order="11" sideWeight="0.49919224" visible="true" weight="0.32520324" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -472,6 +434,9 @@
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
   </component>
+  <component name="VcsContentAnnotationSettings">
+    <option name="myLimit" value="2678400000" />
+  </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
@@ -488,27 +453,10 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/resources/views/admin/gateway/create.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-609">
-          <caret line="1" column="34" selection-start-line="1" selection-start-column="34" selection-end-line="1" selection-end-column="34" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Repositories/Eloquent/Users/EloquentUserRepository.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="420">
-          <caret line="17" column="5" lean-forward="true" selection-start-line="17" selection-start-column="5" selection-end-line="17" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/Providers/RepositoryServiceProvider.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="364">
           <caret line="35" column="78" selection-start-line="35" selection-start-column="78" selection-end-line="35" selection-end-column="78" />
-          <folding>
-            <element signature="e#33#91#0#PHP" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -564,9 +512,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="2660">
           <caret line="99" column="46" selection-start-line="99" selection-start-column="46" selection-end-line="99" selection-end-column="46" />
-          <folding>
-            <element signature="e#53#89#0#PHP" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -574,9 +519,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="280">
           <caret line="10" column="59" selection-start-line="10" selection-start-column="59" selection-end-line="10" selection-end-column="59" />
-          <folding>
-            <element signature="e#55#78#0#PHP" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -612,25 +554,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="476">
           <caret line="47" column="60" lean-forward="true" selection-start-line="47" selection-start-column="60" selection-end-line="47" selection-end-column="60" />
-          <folding>
-            <element signature="e#424#474#0#PHP" />
-            <element signature="e#517#670#0#PHP" />
-            <element signature="e#680#849#0#PHP" />
-            <element signature="e#859#1205#0#PHP" />
-            <element signature="e#1113#1198#0#PHP" />
-            <element signature="e#1742#1905#0#PHP" />
-            <element signature="e#1780#1894#0#PHP" />
-            <element signature="e#1930#2247#0#PHP" />
-            <element signature="e#2157#2240#0#PHP" />
-            <element signature="e#2257#2903#0#PHP" />
-            <element signature="e#2334#2720#0#PHP" />
-            <element signature="e#2385#2710#0#PHP" />
-            <element signature="e#2730#2897#0#PHP" />
-            <element signature="e#2771#2886#0#PHP" />
-            <element signature="e#2913#3156#0#PHP" />
-            <element signature="e#3038#3150#0#PHP" />
-            <element signature="e#3166#3340#0#PHP" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -645,9 +568,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="476">
           <caret line="17" column="93" selection-start-line="17" selection-start-column="93" selection-end-line="17" selection-end-column="93" />
-          <folding>
-            <element signature="e#64#125#0#PHP" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -690,19 +610,10 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="595">
           <caret line="22" column="22" selection-start-line="22" selection-start-column="22" selection-end-line="22" selection-end-column="22" />
-          <folding>
-            <element signature="e#55#128#0#PHP" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Entities/EloquentUserEntity.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="28">
-          <caret line="8" column="6" selection-start-line="8" selection-start-column="6" selection-end-line="8" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Entities/EloquentUserEntity.php" />
     <entry file="file://$PROJECT_DIR$/app/ValueObjects/Mobile.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="735">
@@ -714,25 +625,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="651">
           <caret line="98" column="1" lean-forward="true" selection-start-line="98" selection-start-column="1" selection-end-line="98" selection-end-column="1" />
-          <folding>
-            <element signature="e#141#469#0#PHP" />
-            <element signature="e#261#336#0#PHP" />
-            <element signature="e#345#424#0#PHP" />
-            <element signature="e#479#541#0#PHP" />
-            <element signature="e#551#632#0#PHP" />
-            <element signature="e#642#1020#0#PHP" />
-            <element signature="e#773#863#0#PHP" />
-            <element signature="e#1030#1120#0#PHP" />
-            <element signature="e#1130#1193#0#PHP" />
-            <element signature="e#1198#1400#0#PHP" />
-            <element signature="e#1299#1364#0#PHP" />
-            <element signature="e#1410#1662#0#PHP" />
-            <element signature="e#1519#1609#0#PHP" />
-            <element signature="e#1672#1803#0#PHP" />
-            <element signature="e#1718#1797#0#PHP" />
-            <element signature="e#1813#2047#0#PHP" />
-            <element signature="e#1909#1999#0#PHP" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -820,9 +712,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-441">
           <caret line="8" column="6" selection-start-line="8" selection-start-column="6" selection-end-line="8" selection-end-column="6" />
-          <folding>
-            <element signature="e#30#70#0#PHP" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -830,11 +719,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="588">
           <caret line="32" column="32" lean-forward="true" selection-start-line="32" selection-start-column="32" selection-end-line="32" selection-end-column="32" />
-          <folding>
-            <element signature="e#427#583#0#PHP" />
-            <element signature="e#485#576#0#PHP" />
-            <element signature="e#593#698#0#PHP" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -852,40 +736,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Presenters/User/UserAccountPresenter.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-273">
-          <caret line="10" column="6" selection-start-line="10" selection-start-column="6" selection-end-line="10" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Presenters/Gateway/GatewayPresenter.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="224">
-          <caret line="9" column="6" selection-start-line="9" selection-start-column="6" selection-end-line="9" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Presenters/Withdrawal/WithdrawalPresenter.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="679">
-          <caret line="32" column="4" selection-start-line="32" selection-start-column="4" selection-end-line="32" selection-end-column="4" />
-          <folding>
-            <element signature="e#47#77#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/admin/withdrawal/item.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="364">
-          <caret line="13" column="5" lean-forward="true" selection-start-line="13" selection-start-column="5" selection-end-line="13" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Admin/Withdrawal/WithdrawalController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="504">
+        <state relative-caret-position="638">
           <caret line="27" column="4" selection-start-line="27" selection-start-column="4" selection-end-line="27" selection-end-column="4" />
           <folding>
             <element signature="e#57#93#0#PHP" expanded="true" />
@@ -895,15 +748,54 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/Models/WithDrawal.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="252">
-          <caret line="11" column="55" selection-start-line="11" selection-start-column="55" selection-end-line="11" selection-end-column="55" />
+        <state relative-caret-position="261">
+          <caret line="11" column="54" selection-start-line="11" selection-start-column="54" selection-end-line="11" selection-end-column="54" />
           <folding>
             <element signature="e#30#70#0#PHP" expanded="true" />
-            <element signature="e#274#479#0#PHP" />
-            <element signature="e#332#472#0#PHP" />
           </folding>
         </state>
       </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Presenters/Withdrawal/WithdrawalPresenter.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="899">
+          <caret line="32" column="4" selection-start-line="32" selection-start-column="4" selection-end-line="32" selection-end-column="4" />
+          <folding>
+            <element signature="e#47#77#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Presenters/Gateway/GatewayPresenter.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="232">
+          <caret line="9" column="6" selection-start-line="9" selection-start-column="6" selection-end-line="9" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Presenters/User/UserAccountPresenter.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="232">
+          <caret line="10" column="6" selection-start-line="10" selection-start-column="6" selection-end-line="10" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/admin/withdrawal/item.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="377">
+          <caret line="13" column="5" selection-start-line="13" selection-start-column="5" selection-end-line="13" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.env">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="314">
+          <caret line="13" column="12" selection-start-line="13" selection-start-column="12" selection-end-line="13" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.env.example">
+      <provider selected="true" editor-type-id="text-editor" />
     </entry>
   </component>
   <component name="masterDetails">
