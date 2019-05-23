@@ -14,9 +14,16 @@ class WithDrawal extends Model
     const PENDING = 1;
     const DONE = 2;
     const REJECTED = 3;
-    protected $primaryKey = 'withdrawal_id';
     
+    protected $primaryKey = 'withdrawal_id';
     protected $guarded = ['withdrawal_id'];
+    
+    /*functions */
+    public function done()
+    {
+        $this->withdrawal_status = self::DONE;
+        $this->save();
+    }
     
     public static function getStatuses()
     {
@@ -26,15 +33,19 @@ class WithDrawal extends Model
             self::REJECTED => 'رد شده',
         ];
     }
+    /*ENd Functions*/
+    
     /*Relations*/
     public function gateway()
     {
-        return $this->belongsTo(Gateway::class,'withdrawal_gateway_id');
+        return $this->belongsTo(Gateway::class, 'withdrawal_gateway_id');
     }
     
     public function account()
     {
-        return $this->belongsTo(UserAccount::class,'withdrawal_user_account_id');
+        return $this->belongsTo(UserAccount::class,
+            'withdrawal_user_account_id');
     }
     /*End Relations*/
+    
 }

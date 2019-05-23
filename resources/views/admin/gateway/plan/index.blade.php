@@ -1,12 +1,12 @@
 @extends('layouts.admin')
 @section('title')
-    لیست درگاه ها
+    لیست پلن ها
 @endsection
 @section('content')
     <div class="col-lg-12">
         <div class="card">
             <div class="card-title">
-                <h4> لیست درگاه ها </h4>
+                <h4> لیست پلن ها </h4>
             </div>
             <div class="card-body">
                 @include('admin.user.account.notifications')

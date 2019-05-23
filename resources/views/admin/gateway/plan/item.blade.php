@@ -1,9 +1,9 @@
 <tr>
     <th scope="row">{{ $plan->gateway_plan_id}}</th>
      <td>{{ $plan->gateway_plan_title }}</td>
-     <td>{{ $plan->gateway_plan_commission }}</td>
-     <td>{{ $plan->gateway_plan_withdrawal_rate }}</td>
-     <td>{{ $plan->gateway_plan_withdrawal_max }}</td>
+     <td>{{ $plan->present()->gateway_plan_commission }}</td>
+     <td>{{ $plan->present()->gateway_plan_withdrawal_rate }}</td>
+     <td>{{ $plan->present()->gateway_plan_withdrawal_max }}</td>
     {{--<td>
        <a href="{{ route('admin.gateway.delete',[$gateway->gateway_id]) }}"
            class="trash-item trash-user-account">

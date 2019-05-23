@@ -4,6 +4,8 @@
 namespace App\Repositories\Contracts;
 
 
+use Illuminate\Support\Facades\DB;
+
 class EloquentBaseRepository implements RepositoryInterface
 {
     protected $model;
@@ -88,12 +90,29 @@ class EloquentBaseRepository implements RepositoryInterface
         return $query->delete();
     }
     
-    public function findWith(int $id,$relations =[])
+    public function findWith(int $id, $relations = [])
     {
-        if (!empty($relations))
-        {
-            return $this->model::with($relations)->where((new $this->model)->getKeyName(),$id)->get();
+        if ( ! empty($relations)) {
+            return $this->model::with($relations)
+                               ->where((new $this->model)->getKeyName(), $id)
+                               ->get();
         }
+        
         return $this->model::find($id);
+    }
+    
+    public function beginTransaction()
+    {
+         DB::beginTransaction();
+    }
+    
+    public function rollBack()
+    {
+          DB::rollBack();
+    }
+    
+    public function commit()
+    {
+        DB::commit();
     }
 }

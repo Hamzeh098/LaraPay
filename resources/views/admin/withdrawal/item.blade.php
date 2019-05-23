@@ -7,8 +7,8 @@
     <td>{{ $withdrawal->withdrawal_ref_number }}</td>
     <td>{{ $withdrawal->present()->create }}</td>
     <td>{{ $withdrawal->present()->update }}</td>
-   {{-- <td>{!!  $withdrawal->present()->adminStatus !!}</td>
+    <td>{!!  $withdrawal->present()->adminStatus !!}</td>
     <td>
         {!!  $withdrawal->present()->adminOperations !!}
-    </td>--}}
+    </td>
 </tr>

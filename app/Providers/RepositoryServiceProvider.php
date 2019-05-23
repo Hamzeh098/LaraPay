@@ -2,6 +2,8 @@
 
 namespace App\Providers;
 
+use App\Repositories\Contracts\BankTransactionRepositoryInterface;
+use App\Repositories\Contracts\GatewayAggregationRepositoryInterface;
 use App\Repositories\Contracts\GatewayRepositoryInterface;
 use App\Repositories\Contracts\PaymentRepositoryInterface;
 use App\Repositories\Contracts\PlanRepositoryInterface;
@@ -9,10 +11,12 @@ use App\Repositories\Contracts\StatisticsRepositoryInterface;
 use App\Repositories\Contracts\UserAccountRepositoryInterface;
 use App\Repositories\Contracts\UserRepositoryInterface;
 use App\Repositories\Contracts\WithdrawalRepositoryInterface;
+use App\Repositories\Eloquent\Gateway\EloquentGatewayAggregationRepository;
 use App\Repositories\Eloquent\Gateway\EloquentGatewayRepository;
 use App\Repositories\Eloquent\Payment\EloquentPaymentRepository;
 use App\Repositories\Eloquent\Plan\EloquentPlanRepository;
 use App\Repositories\Eloquent\Statistics\EloquentStatisticsRepository;
+use App\Repositories\Eloquent\Transaction\EloquentBankTransactionRepository;
 use App\Repositories\Eloquent\Users\EloquentUserAccountRepository;
 use App\Repositories\Eloquent\Users\EloquentUserRepository;
 use App\Repositories\Eloquent\Withdrawal\EloquentWithdrawalRepository;
@@ -34,6 +38,8 @@ class RepositoryServiceProvider extends ServiceProvider
         $this->app->bind(WithdrawalRepositoryInterface::class,EloquentWithdrawalRepository::class);
         $this->app->bind(GatewayRepositoryInterface::class,EloquentGatewayRepository::class);
         $this->app->bind(PlanRepositoryInterface::class,EloquentPlanRepository::class);
+        $this->app->bind(GatewayAggregationRepositoryInterface::class,EloquentGatewayAggregationRepository::class);
+        $this->app->bind(BankTransactionRepositoryInterface::class,EloquentBankTransactionRepository::class);
     }
 
     /**

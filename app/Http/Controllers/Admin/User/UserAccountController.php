@@ -1,8 +1,6 @@
 <?php
 
-
 namespace App\Http\Controllers\Admin\User;
-
 
 use App\Http\Controllers\Controller;
 use App\Models\UserAccount;
@@ -101,7 +99,8 @@ class UserAccountController extends Controller
         $gateway_item       = $gateway_repository->find($gateway_id);
         $results            = $this->user_account_repository->findBy([
             'user_account_user_id' => $gateway_item->gateway_user_id,
-        ], ['user_account_id as id', 'user_account_title as text'],false);
+        ], ['user_account_id as id', 'user_account_title as text'], false);
+        
         //$htmlResult = view('admin.user.account.search',compact('results'))->render();
         return response()->json([
             'items' => $results,

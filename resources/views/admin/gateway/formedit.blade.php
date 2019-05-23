@@ -1,10 +1,10 @@
 {{ csrf_field() }}
-<input name="owner" id="owner" type="hidden" value="{{$gatewayItem->gateway_id}}">
+<input name="owner" id="owner" type="hidden" value="{{$gatewayItem->gateway_user_id}}">
 <div class="form-group">
     <label for="plan">طرح درگاه :</label>
     <select name="plan" id="plan" class="form-control">
-        @foreach($plans as $plan =>$title)
-            <option value="{{ $plan }}" {{ !is_null($gatewayItem) && $gatewayItem->gateway_plan == $plan ? 'selected' : ''  }}>{{ $title }}</option>
+        @foreach($plans as $plan)
+            <option value="{{ $plan->gateway_plan_id }}" {{ !is_null($gatewayItem) && $gatewayItem->gateway_plan == $plan->gateway_plan_id  ? 'selected' : ''  }}>{{ $plan->gateway_plan_title }}</option>
             </option>
         @endforeach
     </select>

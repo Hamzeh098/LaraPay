@@ -12,5 +12,5 @@ class EloquentPlanRepository extends EloquentBaseRepository implements PlanRepos
 {
     protected $model = Plan::class;
     
-    
+
 }
