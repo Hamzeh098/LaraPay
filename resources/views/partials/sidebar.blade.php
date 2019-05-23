@@ -49,7 +49,6 @@
                         <li><a href="{{route('admin.withdrawal.create')}}">ثبت درخواست واریز</a></li>
                     </ul>
                 </li>
-
                 <li><a class="has-arrow " href="#" aria-expanded="false"><i class="fa fa-book"></i><span
                                                class="hide-menu">گزارش های درگاه
                                                                            </span></a>

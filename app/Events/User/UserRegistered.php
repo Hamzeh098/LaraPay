@@ -22,7 +22,7 @@ class UserRegistered
      *
      * @param User $user
      */
-    public function __construct(User $user)
+    public function __construct(z $user)
     {
         return $this->user = $user;
     }
