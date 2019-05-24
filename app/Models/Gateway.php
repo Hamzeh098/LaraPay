@@ -10,6 +10,7 @@ class Gateway extends Model
 {
     use Presentable;
     protected $presenter = GatewayPresenter::class;
+    
     const ACTIVE = 1;
     const INACTIVE = 2;
     
@@ -41,6 +42,11 @@ class Gateway extends Model
     public function withdrawal()
     {
         return $this->hasMany(WithDrawal::class, 'withdrawal_gateway_id');
+    }
+    
+    public function aggregations()
+    {
+        return $this->hasMany(GatewayReport::class,'gateway_report_gateway_id');
     }
     
     

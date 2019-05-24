@@ -64,7 +64,8 @@ class GatewayController extends Controller
     
     public function edit(Request $request)
     {
-        $plans       = Plan::getPlans();
+        $planRepo = resolve(PlanRepositoryInterface::class);
+        $plans       =$planRepo->all();
         $statuses    = Gateway::getStatuses();
         $gatewayItem = $this->gateway_repository->find($request->id);
         
@@ -100,6 +101,7 @@ class GatewayController extends Controller
     public function search(Request $request)
     {
         $term = $this->gateway_repository->search($request->search);
+        
         return response()->json(['items' => $term]);
     }
     

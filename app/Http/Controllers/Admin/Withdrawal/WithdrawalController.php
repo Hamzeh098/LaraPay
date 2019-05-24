@@ -5,8 +5,8 @@ namespace App\Http\Controllers\Admin\Withdrawal;
 use App\Http\Controllers\Controller;
 use App\Repositories\Contracts\GatewayRepositoryInterface;
 use App\Repositories\Contracts\WithdrawalRepositoryInterface;
-use App\Services\Withdrawal\CreateWithdrawalService;
 use App\Services\Withdrawal\WithdrawalRequest;
+use App\Services\Withdrawal\WithdrawalService;
 use Illuminate\Http\Request;
 
 class WithdrawalController extends Controller
@@ -15,19 +15,20 @@ class WithdrawalController extends Controller
      * @var WithdrawalRepositoryInterface
      */
     private $withdrawal_repository;
-    private $CreateWithdrawalService;
+    private $WithdrawalService;
     
     public function __construct(
         WithdrawalRepositoryInterface $withdrawal_repository
     ) {
-        $this->withdrawal_repository   = $withdrawal_repository;
-        $this->CreateWithdrawalService = new CreateWithdrawalService();
+        $this->withdrawal_repository = $withdrawal_repository;
+        $this->WithdrawalService     = new WithdrawalService();
     }
     
     public function index()
     {
-        $withdrawals = $this->withdrawal_repository->all(null,['gateway','account.owner']);
-        return view('admin.withdrawal.index',compact('withdrawals'));
+        $withdrawals = $this->withdrawal_repository->all(null,
+            ['gateway', 'account.owner']);
+        return view('admin.withdrawal.index', compact('withdrawals'));
         
     }
     
@@ -59,7 +60,8 @@ class WithdrawalController extends Controller
         );
         
         try {
-            $result = $this->CreateWithdrawalService->create($withdrawalRequest);
+            $result
+                = $this->WithdrawalService->create($withdrawalRequest);
             if ( ! $result) {
                 return redirect()->route('admin.withdrawal.index')->withErrors([
                     'error' => 'لطفا بعدا امتحان کنید.',
@@ -78,18 +80,49 @@ class WithdrawalController extends Controller
         
     }
     
-    public function delete(Request $request, $id)
+    public function approve(Request $request, $id)
     {
-    
+        $withdrawalItem = $this->getById($id);
+        
+        return view('admin.withdrawal.approve', compact('withdrawalItem'));
     }
     
-    public function edit(Request $request, $id)
+    public function performApprove(Request $request, $id )
     {
-    
+        $resultApprove = $this->WithdrawalService->approve($id,$request->ref_number);
+        if ($resultApprove) {
+            return redirect()->route('admin.withdrawal.index')
+                             ->with('status', 'درخواست با موفقیت انجام شد!');
+        }
+        
+        return redirect()->back()->withErrors([
+            'error' => 'درخواست با مشکل مواجه شد لطفا بعدا امتحان کنید',
+        ]);
     }
     
-    public function update(Request $request, $id)
+    public function reject(Request $request, $id)
     {
-    
+        $resultReject = $this->WithdrawalService->reject($id);
+        if ($resultReject)
+        {
+            return redirect()->back()->with('status','درخواست با موفقیت اجرا شد');
+        }
+        return redirect()->back()->withErrors([
+           'error'=>'درخواست با موفقیت حذف شد'
+        ]);
+        
+        
     }
+    
+    private function getById($id)
+    {
+        $WithdrawalItem = $this->withdrawal_repository->find($id);
+        if ( ! $WithdrawalItem) {
+            abort(404);
+        }
+        
+        return $WithdrawalItem;
+    }
+    
+    
 }
