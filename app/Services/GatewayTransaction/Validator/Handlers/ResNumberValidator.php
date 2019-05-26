@@ -12,7 +12,7 @@ class ResNumberValidator extends Validator
 
     public function process(GatewayTransactionRequest $request)
     {
-        if (strlen($request->getResNumber()) < 20) {
+        if (strlen($request->getResNumber()) < 15) {
             throw new ResNumberException('invalid Resnumber!');
         }
 

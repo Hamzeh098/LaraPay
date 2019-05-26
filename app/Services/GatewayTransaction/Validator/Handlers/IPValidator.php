@@ -16,11 +16,10 @@ class IPValidator extends Validator
         $gateway_repo = resolve(GatewayRepositoryInterface::class);
         $gateway = $gateway_repo->findBy(
             [
-                'access_token'=>$request->getToken()
+                'access_token' => $request->getToken()
             ]
         );
-        if ($gateway->ip_gateway !== $request->getIp())
-        {
+        if ($gateway->ip_gateway !== $request->getIp()) {
             throw new IPException('invalid IP Address');
         }
         return true;

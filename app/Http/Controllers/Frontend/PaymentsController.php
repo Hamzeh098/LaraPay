@@ -14,20 +14,19 @@ class PaymentsController extends Controller
      */
     private $payment_service;
     private $bank_transaction_repo;
-    
+
     public function __construct(PaymentService $payment_service)
     {
-        
+
         $this->payment_service = $payment_service;
-        $this->bank_transaction_repo
-                               = resolve(BankTransactionRepositoryInterface::class);
+        $this->bank_transaction_repo = resolve(BankTransactionRepositoryInterface::class);
     }
-    
+
     public function start()
     {
-         return $this->payment_service->doPayment(1);
+        return $this->payment_service->doPayment(1);
     }
-    
+
     public function verify(Request $request)
     {
         dd($request->all());

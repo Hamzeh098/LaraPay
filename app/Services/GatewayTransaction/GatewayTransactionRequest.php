@@ -10,14 +10,16 @@ class GatewayTransactionRequest
     private $res_number;
     private $ip;
     private $domain;
+    private $description;
 
     public function __construct(array $params)
     {
         $this->token = $params['token'];
         $this->amount = $params['amount'];
-        $this->res_number = $params['resNumber'];
+        $this->res_number = $params['res_number'];
         $this->ip = $params['ip'];
         $this->domain = $params['domain'];
+        $this->description = $params['description'];
     }
 
     /**
@@ -58,6 +60,14 @@ class GatewayTransactionRequest
     public function getDomain()
     {
         return $this->domain;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getDescription()
+    {
+        return $this->description;
     }
 
 }

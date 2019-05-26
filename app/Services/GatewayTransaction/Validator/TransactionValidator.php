@@ -20,8 +20,8 @@ class TransactionValidator
     public function validate(GatewayTransactionRequest $request)
     {
         $resNumValidator = new ResNumberValidator();
-        $DomainValidator = new DomainValidator($resNumValidator);
-        $amountValidaton = new AmountValidator($DomainValidator);
+//        $DomainValidator = new DomainValidator($resNumValidator);
+        $amountValidaton = new AmountValidator($resNumValidator);
         $tokenValidator = new TokenValidator($amountValidaton);
         return $tokenValidator->handle($request);
     }
