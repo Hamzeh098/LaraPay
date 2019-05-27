@@ -2,8 +2,13 @@
 
 namespace App\Http\Controllers\Frontend\Transaction;
 
+use App\Helpers\Hash\ResNumberGenerate;
+use App\Repositories\Contracts\BankTransactionRepositoryInterface;
+use App\Repositories\Contracts\GatewayTransactionRepositoryInterface;
+use App\Repositories\Eloquent\Transaction\BankTransactionStatus;
 use App\Services\GatewayTransaction\GatewayTransactionRequest;
 use App\Services\GatewayTransaction\GatewayTransactionService;
+use App\Services\Payment\PaymentService;
 use http\Env\Response;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
@@ -14,36 +19,71 @@ class TransactionsController extends Controller
      * @var GatewayTransactionService
      */
     private $gatewayTransactionService;
+    /**
+     * @var GatewayTransactionRepositoryInterface
+     */
+    private $gatewayTransactionRepository;
 
-    public function __construct(GatewayTransactionService $gatewayTransactionService)
-    {
+    public function __construct(
+        GatewayTransactionService $gatewayTransactionService,
+        GatewayTransactionRepositoryInterface $gatewayTransactionRepository
+    ) {
 
         $this->gatewayTransactionService = $gatewayTransactionService;
+        $this->gatewayTransactionRepository = $gatewayTransactionRepository;
     }
 
     public function request(Request $request)
     {
         try {
 
-            $transactionKey = $this->gatewayTransactionService->make(new GatewayTransactionRequest([
-                'token' => $request->token,
-                'amount' => $request->amount,
-                'res_number' => $request->res_number,
-                'ip' => $request->ip(),
-                'domain' => $request->getHost(),
-                'description' => ''
+            $transactionKey
+                = $this->gatewayTransactionService->make(new GatewayTransactionRequest([
+                'token'       => $request->token,
+                'amount'      => $request->amount,
+                'res_number'  => $request->res_number,
+                'ip'          => $request->ip(),
+                'domain'      => $request->getHost(),
+                'description' => '',
             ]));
+
             return response()->json([
-                'success' => true,
-                'transactionKey' => $transactionKey
+                'success'        => true,
+                'transactionKey' => $transactionKey,
             ]);
         } catch (\Exception $exception) {
             return response()->json([
                 'success' => false,
-                'message' => $exception->getMessage()
+                'message' => $exception->getMessage(),
             ]);
         }
-
-
     }
+
+    public function start(Request $request)
+    {
+        $transactionKey = $request->transactionKey;
+        $transaction = $this->gatewayTransactionRepository->findBy(
+            [
+                'gateway_transaction_key' => $transactionKey,
+            ]);
+        if (is_null($transaction)) {
+            abort(404);
+        }
+        $bankTransaction = resolve(BankTransactionRepositoryInterface::class);
+        $newBankTransaction = $bankTransaction->store(
+            [
+                'bank_transaction_bank_id'                => 0,
+                'bank_transaction_res_number'             => ResNumberGenerate::getPaymentResNum(),
+                'bank_transaction_amount'                 => $transaction->gateway_transaction_amount,
+                'bank_transaction_gateway_transaction_id' => $transaction->gateway_transaction_id,
+                'bank_transaction_status'                 => BankTransactionStatus::PENDING,
+            ]
+        );
+        if ($bankTransaction) {
+            $peyment = new PaymentService();
+
+            return $peyment->doPayment($newBankTransaction->bank_transaction_id);
+        }
+    }
+
 }
