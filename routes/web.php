@@ -94,4 +94,5 @@ Route::group(['namespace' => 'Frontend', 'as' => 'frontend.'], function () {
     Route::post('pay/verify/{payment_code}','PaymentsController@verify')->name('payment.verify');
     Route::post('transaction/request','Transaction\TransactionsController@request')->name('transaction.request');
     Route::get('transaction/start','Transaction\TransactionsController@start')->name('transaction.start');
+    Route::post('transaction/verify','Transaction\TransactionsController@verify')->name('transaction.verify');
 });

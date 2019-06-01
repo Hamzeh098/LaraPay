@@ -11,6 +11,7 @@ class GatewayTransactionRequest
     private $ip;
     private $domain;
     private $description;
+    private $callBackUrl;
 
     public function __construct(array $params)
     {
@@ -20,6 +21,7 @@ class GatewayTransactionRequest
         $this->ip = $params['ip'];
         $this->domain = $params['domain'];
         $this->description = $params['description'];
+        $this->callBackUrl = $params['callbackUrl'];
     }
 
     /**
@@ -69,5 +71,14 @@ class GatewayTransactionRequest
     {
         return $this->description;
     }
+
+    /**
+     * @return mixed
+     */
+    public function getCallBackUrl()
+    {
+        return $this->callBackUrl;
+    }
+
 
 }

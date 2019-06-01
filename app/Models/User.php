@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use App\Filters\Contracts\Filterable;
 use App\Presenters\Contacts\Presentable;
 use App\Presenters\User\UserPresenter;
 use Illuminate\Notifications\Notifiable;
@@ -10,7 +11,7 @@ use Illuminate\Foundation\Auth\User as Authenticatable;
 
 class User extends Authenticatable
 {
-    use Notifiable, Presentable;
+    use Notifiable, Presentable,Filterable;
     protected $presenter = UserPresenter::class;
     
     /**
