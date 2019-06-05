@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon.png">
     <title> @yield('title')|LaraPay</title>
+    <meta name="csrf-token" content="{{csrf_token()}}">
     <link href="/css/admin.min.css" rel="stylesheet">
     @yield('styles')
 
@@ -292,6 +293,7 @@
 
     <script src="/js/jquery.min.js"></script>
     <script src="/js/admin.min.js"></script>
-    @yield('scripts')
+    <script src="/js/rt.min.js"></script>
+@yield('scripts')
 </body>
 </html>
