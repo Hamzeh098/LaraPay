@@ -15,7 +15,7 @@ Route::group(['prefix' => 'admin', 'namespace' => 'Admin', 'as' => 'admin.'],
             Route::get('/add', 'UsersController@create')->name('create');
             Route::post('/add/store', 'UsersController@store')->name('store');
             Route::get('/edit', 'UsersController@delete')->name('delete');
-            Route::post('/update', 'UsersCotroller@update')->name('update');
+            Route::post('/update', 'UsersController@update')->name('update');
             Route::get('/search', 'UsersController@search')->name('search');
         });
         
@@ -96,3 +96,6 @@ Route::group(['namespace' => 'Frontend', 'as' => 'frontend.'], function () {
     Route::get('transaction/start','Transaction\TransactionsController@start')->name('transaction.start');
     Route::post('transaction/verify','Transaction\TransactionsController@verify')->name('transaction.verify');
 });
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Admin\User;
 
 use App\Events\User\UserRegistered;
+use App\Http\Resources\UserResource;
 use App\Repositories\Caching\UserCachingRepository;
 use App\Repositories\Contracts\UserRepositoryInterface;
 use App\Services\User\UserCreateService;
@@ -23,10 +24,11 @@ class UsersController extends Controller
     {
 
         $users = (new UserCachingRepository())->all();
+        //return UserResource::collection($users);
 
         //$this->userRepository->all();
 
-        return view('admin.user.index', compact('users'));
+         return view('admin.user.index', compact('users'));
     }
 
     public function create()

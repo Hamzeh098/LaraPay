@@ -56,5 +56,25 @@ window.Echo = new Echo({
 });
 
 window.Echo.channel('users').listen('.user.registered', function (event) {
-    return console.log(event);
+    console.log(event);
 });
+
+
+/*
+let withdrawal = 1;
+window.Echo.private(`withdrawal.${withdrawal}`).listen('.approved', function (event) {
+    console.log(event);
+})
+*/
+
+window.Echo.join('room')
+    .here(users => {
+        document.getElementById('onlineUsers').innerText = users.length;
+    })
+    .joining(users => {
+        toastr.success('کاربر' + users.name + 'وارد شد')
+
+    })
+    .leaving(users => {
+        toastr.warning('کاربر' + users.name + 'خارج شد')
+    })
