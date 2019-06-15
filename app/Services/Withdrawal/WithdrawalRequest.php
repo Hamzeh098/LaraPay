@@ -6,7 +6,7 @@ namespace App\Services\Withdrawal;
 
 class WithdrawalRequest
 {
-    
+
     private $gateway;
     private $account;
     private $amount;
@@ -14,18 +14,18 @@ class WithdrawalRequest
     private $rate;
     private $max_amount;
     private $status;
-    
+
     public function __construct(array $data)
     {
         $this->gateway = $data['gateway'];
-        $this->account= $data['account'];
-        $this->amount= $data['amount'];
-        $this->commission=$data['commission'];
+        $this->account = $data['account'];
+        $this->amount = $data['amount'];
+        $this->commission = $data['commission'];
         $this->rate = $data['rate'];
         $this->max_amount = $data['max'];
-        $this->status=$data['status'];
+        $this->status = $data['status'];
     }
-    
+
     /**
      * @return mixed
      */
@@ -33,7 +33,7 @@ class WithdrawalRequest
     {
         return $this->gateway;
     }
-    
+
     /**
      * @return mixed
      */
@@ -41,7 +41,7 @@ class WithdrawalRequest
     {
         return $this->account;
     }
-    
+
     /**
      * @return mixed
      */
@@ -49,7 +49,7 @@ class WithdrawalRequest
     {
         return $this->amount;
     }
-    
+
     /**
      * @return mixed
      */
@@ -57,7 +57,7 @@ class WithdrawalRequest
     {
         return $this->commission;
     }
-    
+
     /**
      * @return mixed
      */
@@ -65,12 +65,12 @@ class WithdrawalRequest
     {
         return $this->status;
     }
-    
+
     public static function fromArray(array $data)
     {
         return new static($data);
     }
-    
+
     /**
      * @return mixed
      */
@@ -78,7 +78,7 @@ class WithdrawalRequest
     {
         return $this->rate;
     }
-    
+
     /**
      * @return mixed
      */
@@ -86,6 +86,6 @@ class WithdrawalRequest
     {
         return $this->max_amount;
     }
-    
-    
+
+
 }

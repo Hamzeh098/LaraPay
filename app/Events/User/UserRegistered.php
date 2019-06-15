@@ -11,18 +11,19 @@ use Illuminate\Foundation\Events\Dispatchable;
 use Illuminate\Broadcasting\InteractsWithSockets;
 use Illuminate\Contracts\Broadcasting\ShouldBroadcast;
 
-class UserRegistered
+class UserRegistered implements ShouldBroadcast
 {
     use Dispatchable, InteractsWithSockets, SerializesModels;
-    
-    
+
+
     public $user;
+
     /**
      * Create a new event instance.
      *
      * @param User $user
      */
-    public function __construct(z $user)
+    public function __construct(User $user)
     {
         return $this->user = $user;
     }
@@ -34,6 +35,21 @@ class UserRegistered
      */
     public function broadcastOn()
     {
-        return new PrivateChannel('channel-name');
+        return new Channel('users');
     }
+
+    public function broadcastAs()
+    {
+        return 'user.registered';
+    }
+
+    public function broadcastWith()
+    {
+        return [
+            'id'   => $this->user->id,
+            'name' => $this->user->name,
+        ];
+    }
+
+
 }

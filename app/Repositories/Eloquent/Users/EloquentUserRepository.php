@@ -27,11 +27,11 @@ class EloquentUserRepository extends EloquentBaseRepository implements
             ]);
     }
 
-    public function store(array $item)
-    {
-        $entityClass = $this->entityclass;
-        $item['password'] = bcrypt($item['password']);
-        $entity = new $entityClass(parent::store($item));
-        return $entity->getEntity();
-    }
+//    public function store(array $item)
+//    {
+//        $entityClass = $this->entityclass;
+//        $item['password'] = bcrypt($item['password']);
+//        $entity = new $entityClass(parent::store($item));
+//        return $entity->getEntity();
+//    }
 }

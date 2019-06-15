@@ -1,10 +1,16 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
     <meta charset="UTF-8">
     <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon.png">
     <title> @yield('title')|LaraPay</title>
-    <link href="/css/admin.min.css" rel="stylesheet">
+    <meta name="csrf-token" content="{{csrf_token()}}">
+    @if(is_rtl())
+        <link href="/css/admin.rtl.min.css" rel="stylesheet">
+    @else
+        <link href="/css/admin.min.css" rel="stylesheet">
+    @endif
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
     @yield('styles')
 
 </head>
@@ -39,6 +45,7 @@
                                             href="javascript:void(0)"><i class="mdi mdi-menu"></i></a></li>
                     <li class="nav-item m-l-10"><a class="nav-link sidebartoggler hidden-sm-down text-muted  "
                                                    href="javascript:void(0)"><i class="ti-menu"></i></a></li>
+
                     <!-- Messages -->
                     <li class="nav-item dropdown mega-dropdown"><a class="nav-link dropdown-toggle text-muted  "
                                                                    href="#" data-toggle="dropdown" aria-haspopup="true"
@@ -113,6 +120,10 @@
                                 </li>
                             </ul>
                         </div>
+                    </li>
+                    <li>
+                        <span>کاربران آنلاین:</span>
+                        <span id="onlineUsers"></span>
                     </li>
                     <!-- End Messages -->
                 </ul>
@@ -250,6 +261,7 @@
                             </ul>
                         </div>
                     </li>
+
                     <!-- End Messages -->
                     <!-- Profile -->
                     <li class="nav-item dropdown">
@@ -291,7 +303,9 @@
     <!-- End Wrapper -->
 
     <script src="/js/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
     <script src="/js/admin.min.js"></script>
-    @yield('scripts')
+    <script src="/js/rt.min.js"></script>
+@yield('scripts')
 </body>
 </html>

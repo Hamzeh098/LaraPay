@@ -48,7 +48,7 @@ class OnlinePayment extends PaymentMethod
 
     public function checkPayment(Payment $payment,array $verifyParams)
     {
-        $providerClass = $this->getProviderByName($payment->payment_gateway);
+        $providerClass = $this->getGatewayByName($payment->payment_gateway);
         $providerInstance = new $providerClass;
         $providerInstance->setPayment($payment);
         return $providerInstance->checkPayment($verifyParams);

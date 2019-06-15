@@ -14,7 +14,7 @@
             <i class="fas fa-trash-alt">delete</i>
         </a>
         <a href="{{ route('admin.user.account.edit',[$account->user_account_id]) }}"
-           class="trash-item trash-user-account">
+           class="fa-trash icon-basic-trashcan-remove">
             <i class="fas fa-edit">edit</i>
         </a>
     </td>
